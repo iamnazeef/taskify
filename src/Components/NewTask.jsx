@@ -19,7 +19,7 @@ const NewTask = (props) => {
     <div className="bg-gray-800 sticky bottom-0 text-white font-Poppins py-5 w-full text-center flex justify-center items-center">
       <input
         type="text"
-        className="py-2 px-4 font-thin font-Poppins tracking-wide text-md rounded-full bg-gray-700 placeholder:text-gray-400 mb-5"
+        className="py-2 px-4 font-thin font-Poppins tracking-wide text-md rounded-full bg-gray-700 placeholder:text-gray-400 sm:mb-5"
         placeholder="Set tasks..."
         onChange={handleChange}
         value={props.data}
