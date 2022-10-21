@@ -16,7 +16,7 @@ const NewTask = (props) => {
   };
 
   return (
-    <div className="bg-gray-800 sticky bottom-0 text-white font-Poppins py-5 w-full text-center flex justify-center items-center">
+    <div className="bg-gray-800 sticky bottom-0 text-white font-Poppins py-5 w-full text-center flex justify-center items-center flex-wrap">
       <input
         type="text"
         className="py-2 px-4 font-thin font-Poppins tracking-wide text-md rounded-full bg-gray-700 placeholder:text-gray-400"
@@ -32,7 +32,7 @@ const NewTask = (props) => {
                 console.log("enter a task");
               }
         }
-        className="ml-4 px-6 py-2 rounded-full text-ms border-2 border-gray-600 hover:bg-gray-700"
+        className="ml-4 px-6 py-2 rounded-full text-ms border-2 border-gray-600 hover:bg-gray-700 xs:mt-3 sm:mt-0"
       >
         <div className="flex font-semibold text-gray-300">Add</div>
       </button>
