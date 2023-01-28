@@ -1,41 +1,38 @@
-const NewTask = (props) => {
-  const handleChange = (e) => {
-    props.setData(e.target.value);
-  };
+import AddIcon from "../assets/icons/AddIcon";
 
-  const handleClick = () => {
-    props.setTasks([
+const NewTask = ({ data, setData, tasks, setTasks }) => {
+  const handleAddTask = () => {
+    setTasks([
       {
-        texts: props.data,
+        texts: data,
         completed: false,
         id: Math.random() * 1000,
       },
-      ...props.tasks,
+      ...tasks,
     ]);
-    props.setData("");
+    setData("");
   };
 
   return (
-    <div className="bg-gray-800 sticky bottom-0 text-white font-Poppins py-5 w-full text-center flex justify-center items-center flex-wrap">
-      <input
-        type="text"
-        className="py-2 px-4 font-thin font-Poppins tracking-wide text-md rounded-full bg-gray-700 placeholder:text-gray-400"
-        placeholder="Set tasks..."
-        onChange={handleChange}
-        value={props.data}
-      />
-      <button
-        onClick={
-          props.data
-            ? handleClick
-            : () => {
-                console.log("enter a task");
-              }
-        }
-        className="ml-4 px-6 py-2 rounded-full text-ms border-2 border-gray-600 hover:bg-gray-700 xs:mt-3 sm:mt-0"
-      >
-        <div className="flex font-semibold text-gray-300">Add</div>
-      </button>
+    <div className="bg-gray-800 fixed bottom-0 text-white w-full px-3 py-5">
+      <div className="flex items-center justify-center space-x-3 w-full max-w-[375px] mx-auto">
+        <input
+          type="text"
+          className="bg-gray-700 rounded-full w-full shadow-sm"
+          placeholder="New Task"
+          value={data}
+          onChange={(event) => setData(event.target.value)}
+          onKeyDown={(event) => {
+            if (event.key === "Enter") handleAddTask();
+          }}
+        />
+        <button
+          className="bg-gray-700 rounded-full p-[0.65rem] shadow-md hover:bg-gray-600"
+          onClick={data ? handleAddTask : null}
+        >
+          <AddIcon />
+        </button>
+      </div>
     </div>
   );
 };

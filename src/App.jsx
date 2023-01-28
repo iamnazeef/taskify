@@ -1,5 +1,5 @@
 import NavBar from "./Components/NavBar";
-import Main from "./Components/Main";
+import Body from "./Components/Body";
 import NewTask from "./Components/NewTask";
 import { useState } from "react";
 import { useEffect } from "react";
@@ -22,9 +22,9 @@ function App() {
   }, [tasks]);
 
   return (
-    <div className="App">
+    <div className="App font-Poppins">
       <NavBar />
-      <Main tasks={tasks} setTasks={setTasks} />
+      <Body tasks={tasks} setTasks={setTasks} />
       <NewTask
         data={data}
         setData={setData}
