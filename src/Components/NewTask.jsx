@@ -29,6 +29,7 @@ const NewTask = ({ data, setData, tasks, setTasks }) => {
         <button
           className="bg-gray-700 rounded-full p-[0.65rem] shadow-md hover:bg-gray-600"
           onClick={data ? handleAddTask : null}
+          aria-label="Button to Add New Task"
         >
           <AddIcon />
         </button>

@@ -4,6 +4,7 @@ import CheckIcon from "../assets/icons/CheckIcon";
 import EditIcon from "../assets/icons/EditIcon";
 import EditOffIcon from "../assets/icons/EditOffIcon";
 import { useState } from "react";
+import { useRef } from "react";
 
 const TaskTemplate = ({ task, id, tasks, setTasks, completed }) => {
   const [edit, setEdit] = useState(false);
@@ -54,6 +55,7 @@ const TaskTemplate = ({ task, id, tasks, setTasks, completed }) => {
         <button
           className="rounded-full p-1 cursor-pointer hover:bg-gray-700 transition-colors delay-[15ms] ease-linear"
           onClick={() => handleChecked(id)}
+          aria-label="Button to confirm task is done"
         >
           {completed ? <DoubleCheckIcon /> : <CheckIcon />}
         </button>
@@ -71,6 +73,7 @@ const TaskTemplate = ({ task, id, tasks, setTasks, completed }) => {
                 setEdit((prev) => !prev);
               }
             }}
+            autoFocus
           />
         ) : (
           <p
@@ -93,6 +96,7 @@ const TaskTemplate = ({ task, id, tasks, setTasks, completed }) => {
               setEdit((prev) => !prev);
             }
           }}
+          aria-label="Button to edit / update task"
         >
           {edit ? <EditOffIcon /> : <EditIcon />}
         </button>
@@ -101,6 +105,7 @@ const TaskTemplate = ({ task, id, tasks, setTasks, completed }) => {
         <button
           className="rounded-full p-1 cursor-pointer hover:bg-gray-700 transition-colors delay-[15ms] ease-linear"
           onClick={() => handleDelete(id)}
+          aria-label="Button to delete task"
         >
           <DeleteIcon />
         </button>
