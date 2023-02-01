@@ -1,6 +1,6 @@
 # Taskify
 
-Taskify is a TO-DO App built using ReactJS and Tailwind CSS.
+Taskify is a to-do list app built using React JS. It includes features such as adding tasks, editing tasks and deleting tasks along with saving the tasks in local storage.
 
 ## To Run
 
