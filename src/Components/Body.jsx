@@ -3,7 +3,7 @@ import TaskTemplate from "./TaskTemplate";
 const Body = ({ tasks, setTasks }) => {
   let taskTemplate = tasks.map((task) => {
     return (
-      <div key={task.id}>
+      <section key={task.id}>
         <TaskTemplate
           task={task.texts}
           id={task.id}
@@ -11,14 +11,14 @@ const Body = ({ tasks, setTasks }) => {
           setTasks={setTasks}
           completed={task.completed}
         />
-      </div>
+      </section>
     );
   });
 
   return (
-    <div className="bg-gray-900 text-white py-[85px] min-h-screen">
+    <main className="bg-gray-900 text-white py-[85px] font-Poppins min-h-screen">
       {taskTemplate}
-    </div>
+    </main>
   );
 };
 

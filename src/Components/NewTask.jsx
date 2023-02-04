@@ -14,11 +14,11 @@ const NewTask = ({ data, setData, tasks, setTasks }) => {
   };
 
   return (
-    <div className="bg-gray-800 fixed bottom-0 text-white w-full px-3 py-5">
-      <div className="flex items-center justify-center space-x-3 w-full max-w-[375px] mx-auto">
+    <footer className="bg-gray-800 fixed bottom-0 text-white w-full px-3 py-5">
+      <section className="flex items-center justify-center space-x-3 w-full max-w-[375px] mx-auto">
         <input
           type="text"
-          className="bg-gray-700 rounded-full w-full shadow-sm"
+          className="bg-gray-700 rounded-full font-Poppins w-full shadow-sm"
           placeholder="New Task"
           value={data}
           onChange={(event) => setData(event.target.value)}
@@ -33,8 +33,8 @@ const NewTask = ({ data, setData, tasks, setTasks }) => {
         >
           <AddIcon />
         </button>
-      </div>
-    </div>
+      </section>
+    </footer>
   );
 };
 

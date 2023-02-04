@@ -22,7 +22,7 @@ function App() {
   }, [tasks]);
 
   return (
-    <div className="App font-Poppins">
+    <>
       <NavBar />
       <Body tasks={tasks} setTasks={setTasks} />
       <NewTask
@@ -31,7 +31,7 @@ function App() {
         tasks={tasks}
         setTasks={setTasks}
       />
-    </div>
+    </>
   );
 }
 

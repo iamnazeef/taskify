@@ -34,7 +34,7 @@ const TaskTemplate = ({ task, id, tasks, setTasks, completed }) => {
     );
   };
 
-  //UPDATE EDIT
+  //UPDATE TASK
   const saveUpdatedTask = (id) => {
     setTasks(
       tasks.map((task) => {
@@ -50,7 +50,7 @@ const TaskTemplate = ({ task, id, tasks, setTasks, completed }) => {
   };
 
   return (
-    <div className="bg-gray-800 p-3 rounded-xl flex items-center min-h-[74px] mb-4 w-[90%] max-w-[335px] tablet:max-w-[390px] laptop:max-w-[400px] mx-auto shadow-sm">
+    <section className="bg-gray-800 p-3 rounded-xl flex items-center min-h-[74px] mb-4 w-[90%] max-w-[335px] tablet:max-w-[390px] laptop:max-w-[400px] mx-auto shadow-sm">
       <div className="checkIcon w-[15%] flex items-center justify-center">
         <button
           className="rounded-full p-1 cursor-pointer hover:bg-gray-700 transition-colors delay-[15ms] ease-linear"
@@ -76,13 +76,13 @@ const TaskTemplate = ({ task, id, tasks, setTasks, completed }) => {
             autoFocus
           />
         ) : (
-          <p
+          <h2
             className={`text-sm w-full tablet:text-base laptop:text-lg text-center break-words break-normal ${
               completed ? "line-through text-gray-400" : null
             }`}
           >
             {task}
-          </p>
+          </h2>
         )}
       </div>
       <div className="editIcon w-[15%] flex items-center justify-center">
@@ -96,7 +96,7 @@ const TaskTemplate = ({ task, id, tasks, setTasks, completed }) => {
               setEdit((prev) => !prev);
             }
           }}
-          aria-label="Button to edit / update task"
+          aria-label="update task"
         >
           {edit ? <EditOffIcon /> : <EditIcon />}
         </button>
@@ -110,7 +110,7 @@ const TaskTemplate = ({ task, id, tasks, setTasks, completed }) => {
           <DeleteIcon />
         </button>
       </div>
-    </div>
+    </section>
   );
 };
 
